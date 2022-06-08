@@ -22,6 +22,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - name: cd workspace
+      run: cd pingcap
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
@@ -31,7 +34,6 @@ jobs:
     - name: Build
       run: |
         echo "start build"
-        cd pingcap
         yarn
         yarn build
         
