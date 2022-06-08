@@ -29,11 +29,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        cache: 'yarn'
+        cache-dependency-path: /home/ubuntu/preview-en/wordpress/wp-content/themes/test/package-lock.json
         
     - name: Build
       run: |
         echo "start build"
+        cd pingcap
         yarn
         yarn build
         
