@@ -1,0 +1,23 @@
+.block-cards {
+	.block-inner {
+		--num-cols: 1;
+
+		display: grid;
+		grid-template-columns: repeat(var(--num-cols), 1fr);
+		gap: var(--grid-column-gutter);
+
+		@include media-min($medium) {
+			--num-cols: 2;
+		}
+
+		@include media-min($large) {
+			&[data-num-cols="3"] {
+				--num-cols: 3;
+			}
+
+			&[data-num-cols="4"] {
+				--num-cols: 4;
+			}
+		}
+	}
+}

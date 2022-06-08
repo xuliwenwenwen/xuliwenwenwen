@@ -1,0 +1,14 @@
+.archive__load-more-container {
+	display: flex;
+	margin-top: var(--grid-column-gutter);
+
+	@include media-max($medium) {
+		.button {
+			width: 100%;
+		}
+	}
+
+	@include media-min($medium) {
+		margin-top: 4rem;
+	}
+}

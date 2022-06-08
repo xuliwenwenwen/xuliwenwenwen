@@ -1,0 +1,68 @@
+.block-case-study {
+	&__grid {
+		margin-top: 2rem;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"img"
+			"txt"
+			"box"
+			"btn";
+		gap: var(--grid-column-gutter);
+
+		@include media-min($medium) {
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas:
+				"img box"
+				"txt box"
+				"btn box";
+		}
+
+		@include media-min($large) {
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-areas:
+				"img img img txt txt txt txt txt box box box box"
+				"btn btn btn txt txt txt txt txt box box box box";
+		}
+	}
+
+	&__logo {
+		grid-area: img;
+	}
+
+	&__logo-image {
+		@include media-min($medium) {
+			max-width: 150px;
+		}
+
+		@include media-min($large) {
+			max-width: 100%;
+		}
+	}
+
+	&__btn-container {
+		grid-area: btn;
+
+		@include media-min($large) {
+			align-self: start;
+			justify-self: start;
+		}
+	}
+
+	&__content {
+		grid-area: txt;
+	}
+
+	&__box-content {
+		grid-area: box;
+		height: fit-content;
+		box-shadow: var(--default-box-shadow);
+		border-radius: var(--default-border-radius);
+		padding: 4rem;
+	}
+
+	.basic-stat + .basic-stat {
+		margin-top: 3rem;
+	}
+}

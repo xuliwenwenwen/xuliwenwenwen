@@ -1,0 +1,36 @@
+.author-box {
+	position: relative;
+	padding: 4rem 3rem;
+	border-radius: var(--default-border-radius);
+	box-shadow: var(--default-box-shadow);
+
+	@include media-min($large) {
+		padding: 6rem 11rem 7rem;
+	}
+
+	&__image {
+		display: none;
+
+		@include media-min($large) {
+			display: block;
+			position: absolute;
+			top: 4rem;
+			left: -3rem;
+
+			width: 120px;
+			height: 120px;
+
+			box-shadow: var(--default-box-shadow);
+			border-radius: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__about-text {
+		margin-top: 0;
+	}
+
+	&__posts-link {
+		margin-top: 1.5rem;
+	}
+}

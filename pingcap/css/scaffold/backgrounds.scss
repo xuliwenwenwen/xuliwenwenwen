@@ -1,0 +1,126 @@
+.bg-black,
+.bg-blue,
+.block-bg-image:not(.block-bg-image--dark-text) {
+	--body-font-color: var(--color-white);
+
+	--form-label-color: var(--color-white);
+	--form-checkbox-check-img: url("#{$theme-url-base}/media/images/check-white.png");
+	--form-radio-fill-color: var(--color-white);
+}
+
+.bg-white {
+	--body-font-color: var(--color-gray-dark);
+
+	--h1-color: var(--color-blue-dark);
+	--h2-color: var(--color-blue-dark);
+	--h3-color: var(--color-black);
+	--h4-color: var(--color-blue);
+	--h5-color: var(--color-blue-dark);
+	--h6-color: var(--color-blue-dark);
+
+	--button-primary-normal-bg-color: var(--color-pink);
+	--button-primary-normal-border-color: var(--color-pink);
+	--button-primary-normal-text-color: var(--color-white);
+
+	--button-primary-disabled-bg-color: rgba(var(--color-rgb-black), 0.4);
+	--button-primary-disabled-text-color: rgba(var(--color-rgb-white), 0.7);
+
+	--button-secondary-normal-text-color: var(--color-pink);
+	--button-secondary-hover-text-color: var(--color-pink);
+
+	--button-secondary-disabled-text-color: rgba(var(--color-rgb-black), 0.4);
+
+	--form-label-color: var(--color-gray-dark);
+	--form-checkbox-check-img: url("#{$theme-url-base}/media/images/check-black.png");
+	--form-radio-fill-color: #666;
+
+	--anchor-link-normal-color: var(--color-pink);
+	--anchor-link-hover-color: rgba(var(--color-rgb-gray-dark), 0.4);
+
+	--form-control-border-color-default: rgba(var(--color-rgb-black), 0.3);
+	--form-control-border-color-focus: var(--color-gray);
+	--form-control-background-color: var(--color-off-white);
+	--form-control-text-color: var(--color-black);
+	--form-control-focus-text-color: var(--color-black);
+	--form-control-placeholder-color: rgba(var(--color-rgb-gray-dark), 0.4);
+	--form-control-icon-color: var(--color-gray);
+
+	--list-bullet-color: rgba(var(--color-rgb-gray-dark), 0.4);
+
+	--color-blockquote-highlight: var(--color-blue-dark);
+
+	background-color: var(--color-white);
+}
+
+.bg-black {
+	--h1-color: var(--color-blue);
+	--h2-color: var(--color-white);
+	--h3-color: var(--color-white);
+	--h4-color: var(--color-white);
+	--h5-color: var(--color-blue);
+	--h6-color: rgba(var(--color-rgb-white), 0.3);
+
+	--anchor-link-normal-color: var(--color-white);
+	--anchor-link-hover-color: rgba(var(--color-rgb-white), 0.4);
+
+	--button-primary-disabled-bg-color: rgba(var(--color-rgb-pink), 0.4);
+	--button-primary-disabled-text-color: rgba(var(--color-rgb-white), 0.7);
+
+	--form-control-border-color-default: var(--color-gray-light);
+	--form-control-border-color-focus: var(--color-white);
+	--form-control-background-color: var(--color-black);
+	--form-control-text-color: var(--color-white);
+	--form-control-focus-text-color: var(--color-white);
+	--form-control-placeholder-color: rgba(var(--color-rgb-white), 0.4);
+	--form-control-icon-color: var(--color-pink);
+
+	--list-bullet-color: rgba(var(--color-rgb-white), 0.4);
+
+	--color-blockquote-highlight: var(--color-pink);
+
+	background-color: var(--color-black);
+}
+
+.bg-blue {
+	--h1-color: var(--color-white);
+	--h2-color: var(--color-white);
+	--h3-color: var(--color-white);
+	--h4-color: var(--color-white);
+	--h5-color: var(--color-white);
+	--h6-color: rgba(var(--color-rgb-white), 0.3);
+
+	--button-secondary-normal-text-color: var(--color-black);
+	--button-secondary-hover-text-color: var(--color-white);
+
+	--carousel-nav-color: #172d72;
+	--color-blockquote-highlight: var(--color-white);
+
+	background-color: var(--color-blue);
+}
+
+.block-bg-image {
+	background-color: var(--color-white);
+	background-size: cover;
+
+	&.block-bg-overlay {
+		&::before {
+			z-index: -1;
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-image: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0.7) 0%,
+				rgba(246, 249, 252, 0) 100%
+			);
+		}
+
+		.block-inner {
+			z-index: 1;
+			position: relative;
+		}
+	}
+}

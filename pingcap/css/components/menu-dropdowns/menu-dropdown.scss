@@ -1,0 +1,24 @@
+.menu-dropdown {
+	position: relative;
+	padding: 3rem 0 5rem;
+
+	@include media-min($large) {
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 50vw;
+			background-color: var(--color-black);
+		}
+
+		&::before {
+			left: -50vw;
+		}
+
+		&::after {
+			right: -50vw;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+.hs-form-field {
+	margin-top: 1.5rem;
+
+	ul.hs-error-msgs {
+		margin-top: 0.5rem;
+		list-style: none;
+
+		label.hs-error-msg {
+			color: var(--error-text);
+		}
+	}
+}
+
+.hs-fieldtype-booleancheckbox {
+	ul {
+		list-style: none;
+	}
+}
+
+.hs-submit {
+	margin-top: 3rem;
+
+	input[type="submit"] {
+		min-width: 115px;
+	}
+}
+
+.hs-richtext {
+	margin-top: 3rem;
+}
+
+.legal-consent-container {
+	margin-top: 3rem;
+}
+
+.hs-form-container .legal-consent-container .hs-form-booleancheckbox-display > span {
+	margin-left: 0;
+}

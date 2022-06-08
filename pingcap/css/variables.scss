@@ -1,0 +1,235 @@
+$global-width: 1280px;
+$container-margin-lg: 70px;
+
+// breakpoint variables
+$medium: 641px;
+$large: 1025px;
+$xlarge: 1441px;
+$xxlarge: 1921px;
+
+$theme-url-base: "../..";
+
+/*************************************
+Background Color Names
+**************************************/
+$bg-color-names: ("white", "black", "blue");
+
+:root {
+	--global-width: #{$global-width};
+	--bp-medium: #{$medium};
+	--bp-large: #{$large};
+	--bp-xlarge: #{$xlarge};
+	--bp-xxlarge: #{$xxlarge};
+
+	/*************************************
+	Defaults
+	**************************************/
+	--default-border-radius: 6px;
+	--default-input-border-radius: 20px;
+	--default-input-min-height: 40px;
+	--default-transition-speed: 0.2s;
+	--default-transition-easing: ease-in-out;
+	--default-transition-params: var(--default-transition-speed) var(--default-transition-easing);
+	--default-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2);
+	--default-input-border-radius: var(--default-border-radius);
+
+	/*************************************
+	z-index
+	**************************************/
+	--z-root: 0;
+	--z-header: calc(var(--z-root) + 10);
+	--z-above-all: calc(var(--z-header) + 10);
+
+	/*************************************
+	Header
+	**************************************/
+	--header-height: 65px;
+
+	@include media-min($large) {
+		--header-height: 100px;
+	}
+
+	--header-transition-speed: calc(var(--default-transition-speed) * 2);
+
+	/*************************************
+	Layout
+	**************************************/
+	--container-margin: 1.6rem;
+	--container-max-width: calc(100vw - calc(var(--container-margin) * 2));
+	--grid-column-gutter: 3rem;
+
+	@include media-min($medium) {
+		--grid-column-gutter: 4rem;
+	}
+
+	@include media-min($large) {
+		--container-margin: #{$container-margin-lg};
+	}
+
+	@include media-min($global-width) {
+		--container-max-width: calc(var(--global-width) - calc(var(--container-margin) * 2));
+	}
+
+	@include media-min(#{$global-width + ($container-margin-lg * 2)}) {
+		--container-max-width: var(--global-width);
+	}
+
+	/*************************************
+	Colors
+	**************************************/
+	--color-black: #10141d;
+	--color-gray-dark: #333;
+	--color-gray: #666;
+	--color-gray-light: #ccc;
+	--color-blue: #00aeef;
+	--color-blue-dark: #3d64ea;
+	--color-blue-xdark: #172d72;
+	--color-pink: #ff6584;
+	--color-red: #f00;
+	--color-off-white: #eee;
+	--color-white: #fff;
+
+	--color-purple-pink-1: #5d4ce6;
+	--color-purple-pink-2: #7c53d6;
+	--color-purple-pink-3: #9c5ac5;
+	--color-purple-pink-4: #c061b1;
+	--color-purple-pink-5: #ea6b9b;
+
+	--color-rgb-black: 16, 20, 29;
+	--color-rgb-gray-dark: 51, 51, 51;
+	--color-rgb-blue: 0, 174, 239;
+	--color-rgb-blue-dark: 61, 100, 234;
+	--color-rgb-pink: 255, 101, 132;
+	--color-rgb-white: 255, 255, 255;
+
+	--color-footer-legal: #585a61;
+	--color-share-icon: #b7b9bb;
+
+	--error-text: var(--color-red);
+
+	--color-twitter: #79ccf0;
+	--color-facebook: #547bbd;
+	--color-linkedin: #1385c8;
+
+	--color-blockquote-highlight: var(--color-blue-dark);
+
+	/*************************************
+	Buttons
+	*************************************/
+	--button-primary-normal-bg-color: var(--color-pink);
+	--button-primary-normal-border-color: var(--color-pink);
+	--button-primary-normal-text-color: var(--color-white);
+
+	--button-primary-hover-border-color: var(--color-pink);
+	--button-primary-hover-text-color: var(--color-pink);
+
+	--button-primary-disabled-bg-color: rgba(var(--color-rgb-black), 0.4);
+	--button-primary-disabled-border-color: transparent;
+	--button-primary-disabled-text-color: rgba(var(--color-rgb-white), 0.7);
+
+	--button-secondary-normal-text-color: var(--color-pink);
+	--button-secondary-hover-text-color: var(--color-pink);
+	--button-secondary-disabled-text-color: rgba(var(--color-rgb-black), 0.4);
+
+	/*************************************
+	Tables
+	*************************************/
+	--table-border-color: rgba(var(--color-rgb-black), 0.2);
+
+	/*************************************
+	Blocks
+	*************************************/
+	--block-padding-sm-top: 4.25rem;
+	--block-padding-sm-bottom: 4.25rem;
+
+	--block-padding-md-top: 6.25rem;
+	--block-padding-md-bottom: 6.25rem;
+
+	--block-padding-lg-top: 14rem;
+	--block-padding-lg-bottom: 14rem;
+
+	--block-padding-top: var(--block-padding-sm-top);
+	--block-padding-bottom: var(--block-padding-sm-bottom);
+
+	@include media-min($medium) {
+		--block-padding-top: var(--block-padding-md-top);
+		--block-padding-bottom: var(--block-padding-md-bottom);
+	}
+
+	@include media-min($medium) {
+		--block-padding-top: var(--block-padding-lg-top);
+		--block-padding-bottom: var(--block-padding-lg-bottom);
+	}
+
+	/*************************************
+	Typography
+	**************************************/
+	--font-poppins: "Poppins", sans-serif;
+	--font-montserrat: "Montserrat", sans-serif;
+	--font-primary: var(--font-poppins);
+
+	--font-weight-thin: 100;
+	--font-weight-xlight: 200;
+	--font-weight-light: 300;
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--font-weight-xbold: 800;
+	--font-weight-black: 900;
+
+	--body-font-size: 1.6rem;
+	--body-font-line-height: 1.5;
+	--body-font: normal normal var(--font-weight-light) var(--body-font-size) /
+		var(--body-font-line-height) var(--font-primary);
+	--body-font-color: var(--color-gray-dark);
+
+	--h1-color: var(--color-blue-dark);
+	--h2-color: var(--color-blue-dark);
+	--h3-color: var(--color-black);
+	--h4-color: var(--color-blue);
+	--h5-color: var(--color-blue-dark);
+	--h6-color: var(--color-blue-dark);
+
+	--anchor-link-normal-color: var(--color-pink);
+	--anchor-link-hover-color: rgba(var(--color-rgb-gray-dark), 0.4);
+
+	/*************************************
+	Forms
+	**************************************/
+	--form-control-background-color: var(--color-off-white);
+	--form-control-text-color: var(--color-black);
+	--form-control-focus-text-color: var(--color-black);
+	--form-control-placeholder-color: rgba(var(--color-rgb-gray-dark), 0.4);
+	--form-control-icon-color: var(--color-gray);
+	--form-label-color: var(--color-gray-dark);
+	--form-checkbox-radio-border-color: var(--color-gray-light);
+	--form-checkbox-radio-size: 16px;
+	--form-checkbox-check-img: url("#{$theme-url-base}/media/images/check-black.png");
+	--form-radio-fill-color: #666;
+
+	--form-select-arrow-img: url("#{$theme-url-base}/media/images/arrow-down-pink.png");
+
+	--form-control-border-color-default: rgba(var(--color-rgb-black), 0.3);
+	--form-control-border-color-focus: var(--color-gray);
+	--form-control-disabled-opacity: 0.4;
+	--form-control-padding: 8px 20px 8px 18px;
+
+	@include media-min($medium) {
+		--form-control-padding: 10px 20px 12px 18px;
+	}
+
+	@include media-min($large) {
+		--form-control-padding: 0.8rem 1.5rem;
+	}
+
+	/*************************************
+	Misc.
+	**************************************/
+	--list-bullet-color: rgba(var(--color-rgb-gray-dark), 0.4);
+	--accordion-section-title-color: var(--color-pink);
+	--carousel-nav-color: var(--color-pink);
+
+	--post-content-code-bg-color: #fdf6e3;
+	--post-content-code-text-color: #657b83;
+}

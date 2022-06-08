@@ -1,0 +1,33 @@
+.block-logos {
+	&__title-container {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+		margin-bottom: 1rem;
+	}
+
+	&__logo-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--grid-column-gutter);
+
+		@include media-min($large) {
+			grid-template-columns: repeat(6, 1fr);
+		}
+	}
+
+	&__column {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__logo-image {
+		filter: grayscale(1);
+		transition: filter var(--default-transition-params);
+
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
+}

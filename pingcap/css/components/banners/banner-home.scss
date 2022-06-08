@@ -1,0 +1,45 @@
+.banner-home {
+	padding-top: 3rem;
+	padding-bottom: 90vw;
+
+	@include media-min($medium) {
+		padding-top: 5rem;
+		padding-bottom: 0;
+	}
+
+	@include media-min($large) {
+		padding-top: 14rem;
+	}
+
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--grid-column-gutter);
+
+		@include media-min($medium) {
+			grid-template-columns: repeat(12, 1fr);
+		}
+	}
+
+	&__text-content {
+		@include media-min($medium) {
+			padding-bottom: 9.5rem;
+
+			grid-column: 1 / span 6;
+		}
+
+		@include media-min($large) {
+			padding-bottom: 18rem;
+
+			grid-column: 2 / span 5;
+		}
+
+		@include media-min(#{$global-width + ($container-margin-lg * 2)}) {
+			padding-bottom: 23rem;
+		}
+	}
+
+	&__button {
+		margin-top: 1.5rem;
+	}
+}

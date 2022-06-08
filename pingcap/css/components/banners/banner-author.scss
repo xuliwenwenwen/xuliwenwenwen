@@ -1,0 +1,15 @@
+.banner-author {
+	padding-top: 5rem;
+
+	&__text-content {
+		padding-bottom: 14rem;
+
+		.banner-author--has-bio & {
+			padding-bottom: 4rem;
+		}
+	}
+
+	// .banner__breadcrumbs {
+	// 	margin-bottom: 1.5rem;
+	// }
+}

@@ -1,0 +1,198 @@
+/**
+ *	Set base font size to 10px
+ *	This makes calculating rem values very easy
+ *	Just divide your pixel value by 10
+ *	Need an rem value that matches 13px? 1.3rem
+ *	Need an rem value that matches 27px? 2.7rem
+ */
+:root {
+	font-size: 10px;
+}
+
+/**
+ *	Reset element margins
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+	margin: 0;
+}
+
+/**
+ *  Vertical spacing
+ */
+ol,
+ul,
+table,
+blockquote {
+	* + & {
+		margin-top: 3rem;
+	}
+
+	+ * {
+		margin-top: 2.5rem;
+	}
+}
+
+h1 {
+	+ * {
+		margin-top: 2rem;
+	}
+
+	* + & {
+		margin-top: 4rem;
+	}
+}
+
+h2 {
+	+ * {
+		margin-top: 2rem;
+	}
+
+	* + & {
+		margin-top: 4rem;
+	}
+}
+
+h3 {
+	+ * {
+		margin-top: 2rem;
+	}
+
+	* + & {
+		margin-top: 3rem;
+	}
+}
+
+h4 {
+	+ * {
+		margin-top: 1rem;
+	}
+
+	* + & {
+		margin-top: 3rem;
+	}
+}
+
+h5 {
+	+ * {
+		margin-top: 1rem;
+	}
+
+	* + & {
+		margin-top: 2rem;
+	}
+}
+
+h6 {
+	+ * {
+		margin-top: 1rem;
+	}
+
+	* + & {
+		margin-top: 2rem;
+	}
+}
+
+p + p {
+	margin-top: 2.5rem;
+}
+
+/**
+ *	Global element styling
+ */
+body,
+p {
+	font: var(--body-font);
+	color: var(--body-font-color);
+}
+
+span {
+	color: var(--body-font-color);
+}
+
+h1 {
+	font: normal normal var(--font-weight-xbold) 4.8rem / 1.2 var(--font-primary);
+	color: var(--h1-color);
+}
+
+h2 {
+	font: normal normal var(--font-weight-xbold) 2.8rem / 1.25 var(--font-primary);
+	color: var(--h2-color);
+
+	@include media-min($large) {
+		font-size: 3.2rem;
+	}
+}
+
+h3 {
+	font: normal normal var(--font-weight-bold) 2rem / 1.5 var(--font-primary);
+	color: var(--h3-color);
+}
+
+h4 {
+	font: normal normal var(--font-weight-bold) 1.6rem / 1.5 var(--font-primary);
+	color: var(--h4-color);
+
+	&.top-line {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: -2px;
+			left: 0;
+			width: 20px;
+			height: 2px;
+			background-color: var(--h4-color);
+			opacity: 0.3;
+		}
+	}
+}
+
+h5 {
+	font: normal normal var(--font-weight-bold) 1.4rem / 1.57 var(--font-primary);
+	color: var(--h5-color);
+}
+
+h6 {
+	font: normal normal var(--font-weight-bold) 1.2rem / 1.66 var(--font-primary);
+	color: var(--h6-color);
+	text-transform: uppercase;
+}
+
+/**
+ *	Text size modifiers - usually used with paragaph elements
+ */
+.large,
+%large-text {
+	font-size: calc(var(--body-font-size) + 0.2rem);
+	line-height: 1.44;
+}
+
+small,
+.small,
+%small-text {
+	font-size: calc(var(--body-font-size) - 0.2rem);
+	line-height: 1.57;
+}
+
+// Useful classes that are missing without the Foundation typography styles
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}

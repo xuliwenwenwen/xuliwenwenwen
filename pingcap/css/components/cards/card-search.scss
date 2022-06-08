@@ -1,0 +1,27 @@
+.card-search {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: 3rem 4rem 4rem;
+	border-radius: var(--default-border-radius);
+	box-shadow: var(--default-box-shadow);
+	text-decoration: none;
+	color: var(--color-gray-dark);
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border: 2px solid var(--color-pink);
+		border-radius: var(--default-border-radius);
+		opacity: 0;
+		transition: opacity var(--default-transition-params);
+	}
+
+	&:hover::after {
+		opacity: 1;
+	}
+}
