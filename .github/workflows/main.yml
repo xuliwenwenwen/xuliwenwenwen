@@ -40,7 +40,7 @@ jobs:
       - name: deploy file to preview server
         uses: easingthemes/ssh-deploy@v2.2.11
         with:
-          SSH_PRIVATE_KEY: ${{ secrets.PREVIEW_EN_SSH_PRIVATE_KEY_ }}
+          SSH_PRIVATE_KEY: ${{ secrets.PREVIEW_EN_SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.PREVIEW_EN_IP }}
           REMOTE_USER: ubuntu
           SOURCE: ./pingcap/*
