@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  deploy-preview:
 
     runs-on: ubuntu-latest
 
@@ -35,17 +35,14 @@ jobs:
         cd pingcap
         yarn
         yarn build
-        
-  deploy-preview:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: deploy file to preview server
-        uses: easingthemes/ssh-deploy@v2.2.11
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.PREVIEW_EN_SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.PREVIEW_EN_IP }}
-          REMOTE_USER: ubuntu
-          SOURCE: pingcap/
-          TARGET: /home/ubuntu/preview-en/wordpress/wp-content/themes/test
-          EXCLUDE: node_modules
+    
+    - name: deploy file to preview server
+      uses: easingthemes/ssh-deploy@v2.2.11
+      with:
+        SSH_PRIVATE_KEY: ${{ secrets.PREVIEW_EN_SSH_PRIVATE_KEY }}
+        REMOTE_HOST: ${{ secrets.PREVIEW_EN_IP }}
+        REMOTE_USER: ubuntu
+        SOURCE: pingcap/
+        TARGET: /home/ubuntu/preview-en/wordpress/wp-content/themes/test
+        EXCLUDE: node_modules
+
