@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
 name: Main CI
 
 on:
@@ -17,7 +14,6 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
@@ -27,16 +23,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: yarn
-        cache-dependency-path: /home/runner/work/xuliwenwenwen/xuliwenwenwen/pingcap
         
     - name: Build
-    - run: |
+      run: |
         echo "start build"
         cd pingcap
         yarn
-        yarn build   
-        
-    - name: Deploy file to preview server
+        yarn build
+    
+    - name: deploy file to preview server
       uses: easingthemes/ssh-deploy@v2.2.11
       with:
         SSH_PRIVATE_KEY: ${{ secrets.PREVIEW_EN_SSH_PRIVATE_KEY }}
@@ -45,4 +40,3 @@ jobs:
         SOURCE: pingcap/
         TARGET: /home/ubuntu/preview-en/wordpress/wp-content/themes/test
         EXCLUDE: node_modules
-
