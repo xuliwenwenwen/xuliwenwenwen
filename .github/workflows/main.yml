@@ -27,7 +27,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: yarn
-        cache-dependency-path: pingcap/yarn.lock
+        
+    - name: Build
     - run: |
         echo "start build"
         cd pingcap
