@@ -27,15 +27,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: yarn
-        cache-dependency-path: /home/runner/work/xuliwenwenwen/xuliwenwenwen/pingcap
-        
-    - name: Build
-      run: |
+        cache-dependency-path: pingcap/yarn.lock
+    - run: |
         echo "start build"
         cd pingcap
         yarn
-        yarn build
-    
+        yarn build   
+        
     - name: deploy file to preview server
       uses: easingthemes/ssh-deploy@v2.2.11
       with:
