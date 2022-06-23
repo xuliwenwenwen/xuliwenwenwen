@@ -23,7 +23,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: yarn
-        cache-dependency-path: subdir/pingcap/yarn.lock
+        cache-dependency-path: xuliwenwenwen/pingcap/yarn.lock
         
     - name: Build
       run: |
