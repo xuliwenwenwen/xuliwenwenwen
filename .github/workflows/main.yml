@@ -39,5 +39,5 @@ jobs:
         REMOTE_HOST: ${{ secrets.PREVIEW_EN_IP }}
         REMOTE_USER: ubuntu
         SOURCE: pingcap/
-        TARGET: /home/ubuntu/preview-en/wordpress/wp-content/themes/test
+        TARGET: /home/test
         EXCLUDE: node_modules
