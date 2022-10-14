@@ -37,7 +37,7 @@ jobs:
       with:
         SSH_PRIVATE_KEY: ${{ secrets.PREVIEW_EN_SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.PREVIEW_EN_IP }}
-        REMOTE_USER: ubuntu
+        REMOTE_USER: root
         SOURCE: pingcap/
         TARGET: /home/test
         EXCLUDE: node_modules
